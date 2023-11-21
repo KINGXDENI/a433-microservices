@@ -12,7 +12,7 @@ services:
     # Pastikan item-app hanya berjalan setelah item-db diluncurkan.
     depends_on:
       - item-db
-    # Restart policy untuk selalu restart.
+    # Restart policy untuk selalu restart ketika terhenti.
     restart: always
 
   # Service untuk item-db.
@@ -22,9 +22,9 @@ services:
     # Memakai volume bernama app-db dengan target /data/db di container.
     volumes:
       - app-db:/data/db
-    # Restart policy untuk selalu restart.
+    # Restart policy untuk selalu restart ketika terhenti.
     restart: always
 
-# Volume untuk menyimpan data MongoDB.
+# Volume dengan nama app-db untuk menyimpan data MongoDB.
 volumes:
   app-db:
