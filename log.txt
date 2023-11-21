@@ -1,0 +1,54 @@
+ Network a433-microservices_default  Creating
+ Network a433-microservices_default  Created
+ Container a433-microservices-item-db-1  Creating
+ Container a433-microservices-item-db-1  Created
+ Container a433-microservices-item-app-1  Creating
+ Container a433-microservices-item-app-1  Created
+Attaching to a433-microservices-item-app-1, a433-microservices-item-db-1
+a433-microservices-item-db-1   | 2023-11-21T08:17:53.474+0000 I CONTROL  [initandlisten] MongoDB starting : pid=1 port=27017 dbpath=/data/db 64-bit host=2086719e3796
+a433-microservices-item-db-1   | 2023-11-21T08:17:53.475+0000 I CONTROL  [initandlisten] db version v3.6.23
+a433-microservices-item-db-1   | 2023-11-21T08:17:53.475+0000 I CONTROL  [initandlisten] git version: d352e6a4764659e0d0350ce77279de3c1f243e5c
+a433-microservices-item-db-1   | 2023-11-21T08:17:53.475+0000 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.2g  1 Mar 2016
+a433-microservices-item-db-1   | 2023-11-21T08:17:53.475+0000 I CONTROL  [initandlisten] allocator: tcmalloc
+a433-microservices-item-db-1   | 2023-11-21T08:17:53.475+0000 I CONTROL  [initandlisten] modules: none
+a433-microservices-item-db-1   | 2023-11-21T08:17:53.475+0000 I CONTROL  [initandlisten] build environment:
+a433-microservices-item-db-1   | 2023-11-21T08:17:53.475+0000 I CONTROL  [initandlisten]     distmod: ubuntu1604
+a433-microservices-item-db-1   | 2023-11-21T08:17:53.475+0000 I CONTROL  [initandlisten]     distarch: x86_64
+a433-microservices-item-db-1   | 2023-11-21T08:17:53.475+0000 I CONTROL  [initandlisten]     target_arch: x86_64
+a433-microservices-item-db-1   | 2023-11-21T08:17:53.475+0000 I CONTROL  [initandlisten] options: { net: { bindIpAll: true } }
+a433-microservices-item-db-1   | 2023-11-21T08:17:53.476+0000 I -        [initandlisten] Detected data files in /data/db created by the 'wiredTiger' storage engine, so setting the active storage engine to 'wiredTiger'.
+a433-microservices-item-db-1   | 2023-11-21T08:17:53.476+0000 I STORAGE  [initandlisten] 
+a433-microservices-item-db-1   | 2023-11-21T08:17:53.476+0000 I STORAGE  [initandlisten] ** WARNING: Using the XFS filesystem is strongly recommended with the WiredTiger storage engine
+a433-microservices-item-db-1   | 2023-11-21T08:17:53.476+0000 I STORAGE  [initandlisten] **          See http://dochub.mongodb.org/core/prodnotes-filesystem
+a433-microservices-item-db-1   | 2023-11-21T08:17:53.476+0000 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=3418M,cache_overflow=(file_max=0M),session_max=20000,eviction=(threads_min=4,threads_max=4),config_base=false,statistics=(fast),compatibility=(release="3.0",require_max="3.0"),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),statistics_log=(wait=0),verbose=(recovery_progress),
+a433-microservices-item-app-1  | 
+a433-microservices-item-app-1  | > docker-software-delivery@1.0.0 start /app
+a433-microservices-item-app-1  | > node ./bin/www
+a433-microservices-item-app-1  | 
+a433-microservices-item-db-1   | 2023-11-21T08:17:54.605+0000 I STORAGE  [initandlisten] WiredTiger message [1700554674:605051][1:0x7fc79843ba40], txn-recover: Main recovery loop: starting at 32/4736
+a433-microservices-item-db-1   | 2023-11-21T08:17:54.778+0000 I STORAGE  [initandlisten] WiredTiger message [1700554674:778979][1:0x7fc79843ba40], txn-recover: Recovering log 32 through 33
+a433-microservices-item-db-1   | 2023-11-21T08:17:54.914+0000 I STORAGE  [initandlisten] WiredTiger message [1700554674:914502][1:0x7fc79843ba40], txn-recover: Recovering log 33 through 33
+a433-microservices-item-db-1   | 2023-11-21T08:17:55.035+0000 I STORAGE  [initandlisten] WiredTiger message [1700554675:35896][1:0x7fc79843ba40], txn-recover: Set global recovery timestamp: 0
+a433-microservices-item-db-1   | 2023-11-21T08:17:55.105+0000 I CONTROL  [initandlisten] 
+a433-microservices-item-db-1   | 2023-11-21T08:17:55.106+0000 I CONTROL  [initandlisten] ** WARNING: Access control is not enabled for the database.
+a433-microservices-item-db-1   | 2023-11-21T08:17:55.106+0000 I CONTROL  [initandlisten] **          Read and write access to data and configuration is unrestricted.
+a433-microservices-item-db-1   | 2023-11-21T08:17:55.106+0000 I CONTROL  [initandlisten] 
+a433-microservices-item-db-1   | 2023-11-21T08:17:55.106+0000 I CONTROL  [initandlisten] 
+a433-microservices-item-db-1   | 2023-11-21T08:17:55.106+0000 I CONTROL  [initandlisten] ** WARNING: /sys/kernel/mm/transparent_hugepage/enabled is 'always'.
+a433-microservices-item-db-1   | 2023-11-21T08:17:55.106+0000 I CONTROL  [initandlisten] **        We suggest setting it to 'never'
+a433-microservices-item-db-1   | 2023-11-21T08:17:55.107+0000 I CONTROL  [initandlisten] 
+a433-microservices-item-db-1   | 2023-11-21T08:17:55.120+0000 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory '/data/db/diagnostic.data'
+a433-microservices-item-db-1   | 2023-11-21T08:17:55.121+0000 I NETWORK  [initandlisten] listening via socket bound to 0.0.0.0
+a433-microservices-item-db-1   | 2023-11-21T08:17:55.121+0000 I NETWORK  [initandlisten] listening via socket bound to /tmp/mongodb-27017.sock
+a433-microservices-item-db-1   | 2023-11-21T08:17:55.121+0000 I NETWORK  [initandlisten] waiting for connections on port 27017
+a433-microservices-item-app-1  | NODE_ENV: production
+a433-microservices-item-db-1   | 2023-11-21T08:17:55.322+0000 I NETWORK  [listener] connection accepted from 192.168.0.3:56996 #1 (1 connection now open)
+a433-microservices-item-db-1   | 2023-11-21T08:17:55.348+0000 I NETWORK  [conn1] received client metadata from 192.168.0.3:56996 conn1: { driver: { name: "nodejs", version: "2.2.36" }, os: { type: "Linux", name: "linux", architecture: "x64", version: "5.10.102.1-microsoft-standard-WSL2" }, platform: "Node.js v14.21.3, LE, mongodb-core: 2.1.20" }
+a433-microservices-item-app-1  | Connected to database
+Gracefully stopping... (press Ctrl+C again to force)
+Aborting on container exit...
+ Container a433-microservices-item-app-1  Stopping
+ Container a433-microservices-item-app-1  Stopped
+ Container a433-microservices-item-db-1  Stopping
+ Container a433-microservices-item-db-1  Stopped
+canceled
