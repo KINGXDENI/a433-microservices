@@ -6,7 +6,7 @@ TOKEN=$(cat ../token.txt)
 # Perintah untuk build Docker image dari Dockerfile
 docker build -t ghcr.io/kingxdeni/karsajobs-ui:latest .
 
-# Perintah untuk login ke GitHub Container Registry menggunakan Personal Access Token dari files
+# Perintah untuk login ke GitHub Container Registry menggunakan Personal Access Token dari file
 echo "$TOKEN" | docker login ghcr.io -u kingxdeni --password-stdin
 
 # Perintah untuk push image ke GitHub Packages
