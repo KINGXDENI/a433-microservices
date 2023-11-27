@@ -8,15 +8,19 @@ on:
 jobs:
   lint-dockerfile:
     runs-on: ubuntu-latest
-    steps:
-    - name: Checkout Repository
-      uses: actions/checkout@v2
 
-    - name: Install and Run Hadolint
-      run: |
-        sudo apt-get update -qy
-        sudo apt-get install -y hadolint
-        hadolint Dockerfile
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Lint Dockerfile
+        run: |
+          # Install hadolint
+          sudo wget -O /bin/hadolint https://github.com/hadolint/hadolint/releases/download/v2.10.0/hadolint-Linux-x86_64
+          sudo chmod +x /bin/hadolint
+
+          # Run hadolint against Dockerfile
+          hadolint Dockerfile
 
   test-app:
     runs-on: ubuntu-latest
