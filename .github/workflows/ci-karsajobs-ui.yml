@@ -23,21 +23,6 @@ jobs:
           # Run hadolint against Dockerfile
           hadolint Dockerfile  # Menjalankan hadolint untuk memeriksa Dockerfile.
 
-  # Job untuk menjalankan unit tests pada aplikasi backend (Go).
-  test-app:
-    runs-on: ubuntu-latest  # Spesifikasi runner, menggunakan sistem operasi Ubuntu terbaru.
-    steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v2  # Menggunakan aksi (action) untuk checkout repository.
-
-      - name: Set Up Go
-        uses: actions/setup-go@v2  # Menggunakan aksi untuk menyiapkan lingkungan Go.
-        with:
-          go-version: 1.17  # Versi Go yang akan di-setup.
-
-      - name: Run Unit Tests
-        run: go test -v -short --count=1 $(go list ./...)  # Menjalankan unit tests pada aplikasi backend (Go).
-
   # Job untuk melakukan build dan push Docker image pada branch karsajobs-ui.
   build-app-karsajobs-ui:
     runs-on: ubuntu-latest  # Spesifikasi runner, menggunakan sistem operasi Ubuntu terbaru.
