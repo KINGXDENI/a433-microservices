@@ -1,11 +1,12 @@
-name: CI for karsajobs-ui
+name: CI for karsajobs
 
 on:
   push:
     branches:
-      - karsajobs-ui
+      - karsajobs
 
 jobs:
+  # Job untuk melakukan linting pada Dockerfile.
   lint-dockerfile:
     runs-on: ubuntu-latest
 
@@ -22,14 +23,40 @@ jobs:
           # Run hadolint against Dockerfile
           hadolint Dockerfile
 
-  build-app-karsajobs-ui:
+  # Job untuk menjalankan unit tests pada aplikasi backend (Go).
+  test-app:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout Repository
-      uses: actions/checkout@v2
+      - name: Checkout Repository
+        uses: actions/checkout@v2
 
-    - name: Build and Push Docker Image
-      run: |
-        docker build -t ghcr.io/kingxdeni/karsajobs-ui:latest .
-        echo ${{ secrets.GHCR_TOKEN }} | docker login ghcr.io -u kingxdeni --password-stdin
-        docker push ghcr.io/kingxdeni/karsajobs-ui:latest
+      - name: Set Up Go
+        uses: actions/setup-go@v2
+        with:
+          go-version: 1.17
+
+      - name: Run Unit Tests
+        run: go test -v -short --count=1 $(go list ./...)
+
+  # Job untuk melakukan build dan push Docker image pada branch karsajobs.
+  build-app-karsajobs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Set Up Go
+        uses: actions/setup-go@v2
+        with:
+          go-version: 1.17
+
+      - name: Build and Push Docker Image
+        run: |
+          # Build Docker image
+          docker build -t ghcr.io/kingxdeni/karsajobs:latest .
+          
+          # Login to GitHub Container Registry using the provided token
+          echo ${{ secrets.GHCR_TOKEN }} | docker login ghcr.io -u kingxdeni --password-stdin
+          
+          # Push Docker image to GitHub Container Registry
+          docker push ghcr.io/kingxdeni/karsajobs:latest
