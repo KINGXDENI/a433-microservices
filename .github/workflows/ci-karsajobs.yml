@@ -46,5 +46,5 @@ jobs:
     - name: Build and Push Docker Image
       run: |
         docker build -t ghcr.io/kingxdeni/karsajobs:latest .
-        echo "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" | docker login ghcr.io -u kingxdeni --password-stdin
+        echo "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" | docker login ghcr.io -u kingxdeni --password-stdin
         docker push ghcr.io/kingxdeni/karsajobs:latest
